@@ -1,0 +1,161 @@
+.color-354147 {
+    background-color: $color-354147;
+}
+
+.color-707070 {
+    background-color: $color-707070;
+}
+
+.color-F2F2EB {
+    background-color: $color-F2F2EB;
+}
+
+.color-070707 {
+    background-color: $color-070707;
+}
+
+.color-344147 {
+    background-color: $color-344147;
+}
+
+.text-354147 {
+    color: $color-354147;
+}
+
+.text-707070 {
+    color: $color-707070;
+}
+
+.text-F2F2EB {
+    color: $color-F2F2EB;
+}
+
+.text-070707 {
+    color: $color-070707;
+}
+
+.text-344147 {
+    color: $color-344147;
+}
+
+.font14 {
+    font-size: $font14;
+}
+
+.font16 {
+    font-size: $font16;
+}
+
+.font18 {
+    font-size: $font18;
+}
+
+.font20 {
+    font-size: $font20;
+}
+
+.font30 {
+    font-size: $font30;
+}
+
+.font55 {
+    font-size: $font55;
+}
+
+.font70 {
+    font-size: $font70;
+}
+
+.leading19 {
+    line-height: $leading19;
+}
+
+.leading28 {
+    line-height: $leading28;
+}
+
+.leading26 {
+    line-height: $leading26;
+}
+
+.leading28 {
+    line-height: $leading28;
+}
+
+.leading44 {
+    line-height: $leading44;
+}
+
+.leading58 {
+    line-height: $leading58;
+}
+
+.leading74 {
+    line-height: $leading74;
+}
+
+.radius5 {
+    border-radius: $radius5;
+}
+
+.radius4 {
+    border-radius: $radius4;
+}
+
+@include media-breakpoint-down() {
+    .res-font14 {
+        font-size: $font14;
+    }
+
+    .res-font16 {
+        font-size: $font16;
+    }
+
+    .res-font18 {
+        font-size: $font18;
+    }
+
+    .res-font20 {
+        font-size: $font20;
+    }
+
+    .res-font30 {
+        font-size: $font30;
+    }
+
+    .res-font55 {
+        font-size: $font55;
+    }
+
+    .res-font70 {
+        font-size: $font70;
+    }
+
+    .res-leading19 {
+        line-height: $leading19;
+    }
+
+    .res-leading28 {
+        line-height: $leading28;
+    }
+
+    .res-leading26 {
+        line-height: $leading26;
+    }
+
+    .res-leading28 {
+        line-height: $leading28;
+    }
+
+    .res-leading44 {
+        line-height: $leading44;
+    }
+
+    .res-leading58 {
+        line-height: $leading58;
+    }
+
+    .res-leading74 {
+        line-height: $leading74;
+    }
+}
