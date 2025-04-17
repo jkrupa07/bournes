@@ -37,7 +37,7 @@
         .service-card {
             height: 335px;
 
-            @include media-breakpoint-down(lg){
+            @include media-breakpoint-down(lg) {
                 height: 247px;
             }
         }
@@ -45,11 +45,16 @@
 }
 
 .banner-slider-section {
+    .linear-gradiant {
+        background: linear-gradient(360deg, #354147 -30%, rgba(0, 0, 0, 0));
+        height: 135px;
+    }
+
     .banner-slider {
         .banner-img {
             height: 788px;
 
-            @include media-breakpoint-down(lg){
+            @include media-breakpoint-down(lg) {
                 height: 347px;
             }
         }

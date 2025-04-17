@@ -20437,7 +20437,8 @@ var Plugins = /*#__PURE__*/function () {
       this.ServiceSlider();
       this.BannerSlider();
       this.TestimonialSlider();
-      this.Pagination();
+      this.BannerPagination();
+      this.CarouselPagination();
     }
   }, {
     key: "ServiceSlider",
@@ -20500,20 +20501,59 @@ var Plugins = /*#__PURE__*/function () {
       });
     }
   }, {
-    key: "Pagination",
-    value: function Pagination() {
-      updatePagination(0, $('.banner-slider').slick('getSlick').slideCount);
-      $('.banner-slider').on('afterChange', function (event, slick, currentSlide) {
-        updatePagination(currentSlide, slick.slideCount);
+    key: "BannerPagination",
+    value: function BannerPagination() {
+      $(document).ready(function () {
+        updatePagination(0, $('.banner-slider').slick('getSlick').slideCount);
+        $('.banner-slider').on('afterChange', function (event, slick, currentSlide) {
+          updatePagination(currentSlide, slick.slideCount);
+        });
+        function updatePagination(currentSlide, totalSlides) {
+          var formattedCurrent = ('0' + (currentSlide + 1)).slice(-2);
+          var formattedTotal = ('0' + totalSlides).slice(-2);
+          $('.pagination-display').text(formattedCurrent + '/' + formattedTotal);
+        }
+        var $paginationWrapper = $('.banner-slider-section').find('.pagination-wrapper');
+        var $slickDots = $('.banner-slider-section').find('.banner-slider .slick-dots');
+        $paginationWrapper.append($slickDots);
       });
-      function updatePagination(currentSlide, totalSlides) {
-        var formattedCurrent = ('0' + (currentSlide + 1)).slice(-2);
-        var formattedTotal = ('0' + totalSlides).slice(-2);
-        $('.pagination-display').text(formattedCurrent + '/' + formattedTotal);
-      }
-      var $paginationWrapper = $('.banner-slider-section').find('.pagination-wrapper');
-      var $slickDots = $('.banner-slider-section').find('.banner-slider .slick-dots');
-      $paginationWrapper.append($slickDots);
+    }
+  }, {
+    key: "CarouselPagination",
+    value: function CarouselPagination() {
+      $(document).ready(function () {
+        var $carousel = $('#modalCarouselControls');
+        var $currentSlide = $('#modalCurrentSlide');
+        var $totalSlides = $('#modalTotalSlides');
+        var $slides = $carousel.find('.carousel-item');
+
+        // Function to format the slide number with leading zero (01, 02, etc.)
+        var formatNum = function formatNum(n) {
+          return (n < 10 ? '0' : '') + n;
+        };
+
+        // Set the total slides (e.g., "03" for 3 slides)
+        $totalSlides.text(formatNum($slides.length));
+
+        // Initialize the carousel
+        $carousel.carousel();
+
+        // Function to update the current slide number
+        function updateCurrentSlide() {
+          var activeIndex = $carousel.find('.carousel-item.active').index(); // Get the index of the active slide
+          $currentSlide.text(formatNum(activeIndex + 1)); // Update the display for current slide number
+        }
+
+        // When the carousel slides, update the pagination
+        $carousel.on('slid.bs.carousel', function () {
+          updateCurrentSlide(); // Update the current slide number when the slide changes
+        });
+
+        // Ensure the pagination is correct when the modal is shown (this helps with the initial state)
+        $('#memberModalToggle').on('shown.bs.modal', function () {
+          updateCurrentSlide();
+        });
+      });
     }
   }]);
   return Plugins;
@@ -20635,7 +20675,46 @@ var Privacy = /*#__PURE__*/function () {
   }]);
   return Privacy;
 }();
+;// CONCATENATED MODULE: ./src/js/parts/header.js
+function header_typeof(obj) { "@babel/helpers - typeof"; return header_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, header_typeof(obj); }
+function header_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function header_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, header_toPropertyKey(descriptor.key), descriptor); } }
+function header_createClass(Constructor, protoProps, staticProps) { if (protoProps) header_defineProperties(Constructor.prototype, protoProps); if (staticProps) header_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function header_toPropertyKey(arg) { var key = header_toPrimitive(arg, "string"); return header_typeof(key) === "symbol" ? key : String(key); }
+function header_toPrimitive(input, hint) { if (header_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (header_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var Header = /*#__PURE__*/function () {
+  function Header() {
+    header_classCallCheck(this, Header);
+  }
+  header_createClass(Header, [{
+    key: "init",
+    value: function init() {
+      this.HeaderFixed();
+    }
+  }, {
+    key: "HeaderFixed",
+    value: function HeaderFixed() {
+      // header fixed js
+      var prevScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+      $(window).scroll(function () {
+        var sticky = $(".header"),
+          scroll = $(window).scrollTop();
+        if (scroll >= 20) {
+          sticky.addClass("header-fixed");
+          sticky.removeClass("header-fixed-os");
+        } else {
+          sticky.removeClass("header-fixed");
+          sticky.addClass("header-fixed-os");
+        }
+        var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+        prevScrollPos = currentScrollPos;
+      });
+    }
+  }]);
+  return Header;
+}();
 ;// CONCATENATED MODULE: ./src/js/main.js
+
 
 
 
@@ -20672,6 +20751,8 @@ jquery_default()(function () {
   window.accordion.init();
   window.privacy = new Privacy();
   window.privacy.init();
+  window.header = new Header();
+  window.header.init();
 });
 
 // ===========================================================================
