@@ -16,6 +16,40 @@
     &.header-fixed-os {
         border-bottom: 0.1px solid rgba($color: $white, $alpha: 0.2);
     }
+
+    &.hidden {
+        background-color: $white;
+
+        .social-bg {
+            border: 1px solid $black;
+        }
+
+        .social-img {
+            img {
+                filter: invert(1);
+            }
+        }
+        
+        .white-logo{
+            filter: invert(1);
+
+        }
+
+        .contact-content{
+            border: 1px solid $black;
+
+            .phone-icon{
+                img{
+                    filter: invert(1);
+                }
+            }
+
+            .contact-us{
+                color: $black!important;
+            }
+        }
+
+    }
 }
 
 .divider {

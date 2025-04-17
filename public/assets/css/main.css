@@ -17940,6 +17940,27 @@ form textarea::placeholder {
 .header.header-fixed-os {
   border-bottom: 0.1px solid rgba(255, 255, 255, 0.2);
 }
+.header.hidden {
+  background-color: #fff;
+}
+.header.hidden .social-bg {
+  border: 1px solid #000;
+}
+.header.hidden .social-img img {
+  filter: invert(1);
+}
+.header.hidden .white-logo {
+  filter: invert(1);
+}
+.header.hidden .contact-content {
+  border: 1px solid #000;
+}
+.header.hidden .contact-content .phone-icon img {
+  filter: invert(1);
+}
+.header.hidden .contact-content .contact-us {
+  color: #000 !important;
+}
 
 .divider {
   border-top: 0.1px solid #fff;
