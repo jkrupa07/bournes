@@ -1,20 +1,20 @@
-.color-354147 {
+.bg-354147 {
     background-color: $color-354147;
 }
 
-.color-707070 {
+.bg-707070 {
     background-color: $color-707070;
 }
 
-.color-F2F2EB {
+.bg-F2F2EB {
     background-color: $color-F2F2EB;
 }
 
-.color-070707 {
+.bg-070707 {
     background-color: $color-070707;
 }
 
-.color-344147 {
+.bg-344147 {
     background-color: $color-344147;
 }
 
@@ -102,7 +102,7 @@
     border-radius: $radius4;
 }
 
-@include media-breakpoint-down() {
+@include media-breakpoint-down(lg) {
     .res-font14 {
         font-size: $font14;
     }
@@ -131,6 +131,22 @@
         font-size: $font70;
     }
 
+    .res-font22 {
+        font-size: $res-font22;
+    }
+
+    .res-font24 {
+        font-size: $res-font24;
+    }
+
+    .res-font37 {
+        font-size: $res-font37;
+    }
+
+    .res-font41 {
+        font-size: $res-font41;
+    }
+
     .res-leading19 {
         line-height: $leading19;
     }
@@ -157,5 +173,9 @@
 
     .res-leading74 {
         line-height: $leading74;
+    }
+
+    .res-leading47 {
+        line-height: $res-leading47;
     }
 }

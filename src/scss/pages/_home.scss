@@ -1,0 +1,70 @@
+.hero-section {
+    .linear-gradiant {
+        background-color: rgba($color: $black, $alpha: 0.2);
+    }
+
+    @include media-breakpoint-down(lg) {
+        height: 615px;
+    }
+}
+
+.left-right-section {
+    .right-img {
+        height: 585px;
+
+        @include media-breakpoint-down(lg) {
+            height: 290px;
+        }
+    }
+}
+
+.our-service-section {
+
+    .slick-arrows {
+        background-color: transparent;
+
+        .prev-arrow,
+        .next-arrow {
+            width: 30px;
+        }
+
+        .next-arrow {
+            transform: rotate(180deg);
+        }
+    }
+
+    .service-slider {
+        .service-card {
+            height: 335px;
+
+            @include media-breakpoint-down(lg){
+                height: 247px;
+            }
+        }
+    }
+}
+
+.banner-slider-section {
+    .banner-slider {
+        .banner-img {
+            height: 788px;
+
+            @include media-breakpoint-down(lg){
+                height: 347px;
+            }
+        }
+    }
+}
+
+.slick-arrows {
+
+    .prev-arrow,
+    .next-arrow {
+        width: 30px;
+        background-color: transparent;
+    }
+
+    .next-arrow {
+        transform: rotate(180deg);
+    }
+}

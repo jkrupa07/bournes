@@ -1,0 +1,39 @@
+.service-slider {
+
+    .slick-list {
+        margin-inline: -8px;
+        overflow: visible;
+
+        .slick-slide {
+            padding-inline: 8px;
+        }
+    }
+
+}
+
+.testimonial-slider {
+    .comma-img {
+        width: 36px;
+    }
+
+    .slick-list {
+        margin-inline: -8px;
+
+        .slick-slide {
+            padding-inline: 8px;
+        }
+    }
+}
+
+.banner-slider-section {
+    .pagination-display {
+        right: 110px;
+        bottom: 60px;
+    }
+
+
+    .slick-arrows {
+        bottom: 60px;
+        left: 60px;
+    }
+}

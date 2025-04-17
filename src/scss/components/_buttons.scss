@@ -6,3 +6,51 @@ button,
     -moz-appearance: none !important;
     -webkit-appearance: none !important;
 }
+
+.btnA {
+    height: 47px;
+    padding-inline: 34px;
+
+    &.bg-354147-btn {
+        background-color: $color-354147;
+        border: 1px solid transparent;
+
+        &:hover {
+            background-color: transparent;
+            border: 1px solid $color-354147;
+        }
+    }
+
+    &.bg-354147-text-btn {
+        background-color: $color-354147;
+        border: 1px solid transparent;
+
+        &:hover {
+            background-color: transparent;
+            border: 1px solid $color-354147;
+            color: $color-354147 !important;
+        }
+    }
+
+    &.white-border-btn {
+        background-color: transparent;
+        border: 1px solid $white;
+
+        &:hover {
+            background-color: $white;
+            border: 1px solid transparent;
+            color: $black !important;
+        }
+    }
+
+    &.white-bg-btn {
+        background-color: $white;
+        border: 1px solid transparent;
+
+        &:hover {
+            background-color: transparent;
+            border: 1px solid $white;
+            color: $white !important;
+        }
+    }
+}

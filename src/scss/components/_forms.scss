@@ -1,0 +1,32 @@
+form {
+    input {
+        height: 51px;
+        
+        &.transparent-input {
+            border-bottom: 1px solid $white !important;
+            
+            &::placeholder {
+                font-family: "avenir-book";
+                font-size: $font20;
+                line-height: $leading28;
+                color: $white;
+            }
+        }
+    }
+
+    textarea {
+        font-family: "avenir-book";
+        font-size: $font20;
+        line-height: $leading28;
+        border-right: 0;
+        border-left: 0;
+        border-bottom: 1px solid $white !important;
+
+        &::placeholder{
+            font-family: "avenir-book";
+            font-size: $font20;
+            line-height: $leading28;
+            color: $white;
+        }
+    }
+}
